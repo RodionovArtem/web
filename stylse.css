@@ -1,0 +1,45 @@
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+body {
+    background-color: lightsteelblue;
+}
+.form-input {
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+input[type=submit] {
+    width: 100px;
+    height: 40px;
+    background-color: greenyellow;
+}
+input[type=submit]:hover {
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+    background-color: lawngreen;
+}
+input[type=submit]:active {
+    background-color: green;
+}
+.submit-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

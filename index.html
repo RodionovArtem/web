@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" href="stylse.css">
 </head>
 <body>
-$END$
+<div class="container">
+<h1>Registration form</h1>
+<form>
+    <div class="form-input">
+        <label for ="name-input">Enter your name</label>
+        <input type="text" id ="name-input" placeholder="Name"/>
+    </div>
+    <div class="form-input">
+        <label for ="email-input">Enter your email</label>
+        <input type="text" id ="email-input" placeholder="example@mail.ru"/>
+    </div>
+    <div class="form-input">
+        <label for ="password-input">Enter your password</label>
+        <input type="password" id="password-input" placeholder="Password"/>
+    </div>
+    <div class="form-input">
+        <label for ="user-type-input">User</label>
+        <select id="user-type-input">
+            <option value="Student">Student</option>
+            <option value="Teacher">Professor</option>
+        </select>
+    </div>
+    <div class="submit-input">
+        <input type="submit" value="Submit"/>
+    </div>
+</form>
+</div>
 </body>
 </html>
