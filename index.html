@@ -6,6 +6,12 @@
     <link rel="stylesheet" href="stylse.css">
 </head>
 <body>
+<div class="form-radio">
+    <label for="radio-black">Темная</label>
+    <input type="radio" name="driver" id="radio-black" />
+    <label for="radio-white">Светлая</label>
+    <input type="radio" name="driver" id="radio-white" checked>
+</div>
 <div class="container">
 <h1>Registration form</h1>
 <form>
@@ -15,7 +21,7 @@
     </div>
     <div class="form-input">
         <label for ="email-input">Enter your email</label>
-        <input type="text" id ="email-input" placeholder="example@mail.ru"/>
+        <input type="email" id ="email-input" placeholder="example@mail.ru"/>
     </div>
     <div class="form-input">
         <label for ="password-input">Enter your password</label>
@@ -29,9 +35,85 @@
         </select>
     </div>
     <div class="submit-input">
-        <input type="submit" value="Submit"/>
+        <button type="submit" id ="submit-input">Submit</button>
     </div>
 </form>
 </div>
+<script type="text/javascript">
+    const body = document.getElementsByTagName("body")[0];
+    let prov1 = false;
+    let prov2 = false;
+    let prov3 = false;
+    const button = document.getElementById("submit-input");
+    button.onclick = function () {
+        if(prov1 === false || prov2===false || prov3===false) {
+            if(prov1===false){
+                email.style.backgroundColor="red";
+            }
+            if(prov2===false){
+                pass.style.backgroundColor="red";
+            }
+            if(prov3===false){
+                username.style.backgroundColor="red";
+            }
+            button.setCustomValidity("Заполните все поля!");
+        } else {
+            button.setCustomValidity("");
+        }
+    };
+    const email = document.getElementById("email-input");
+    email.onclick = function () {
+    if (email.validity.typeMismatch) {
+            email.setCustomValidity("Введите адрес электронной почты!");
+            email.style.backgroundColor="white";
+            prov1=false;
+        } else {
+            email.style.backgroundColor="white";
+            email.setCustomValidity("");
+            prov1=true;
+        }
+    };
+
+    const pass = document.getElementById("password-input");
+    let passLenght;
+    pass.addEventListener("input", (ev)=> passLenght = ev.target.value);
+    pass.onclick = function () {
+        if (passLenght.length < 7) {
+            pass.setCustomValidity("Пароль должен состоять не менее чем из 7 символов!");
+            prov2=false;
+            pass.style.backgroundColor="white";
+        } else {
+            pass.style.backgroundColor="white";
+            pass.setCustomValidity("");
+            prov2=true;
+        }
+    };
+
+    const username = document.getElementById("name-input");
+    let inputValue;
+    username.addEventListener("input", (ev)=> inputValue = ev.target.value);
+    username.onclick = function () {
+        if (inputValue.length < 5) {
+            username.setCustomValidity("Имя пользователя должно состоять не менее чем из 5 символов!");
+            prov3=false;
+            username.style.backgroundColor="white";
+        }else {
+            username.style.backgroundColor="white";
+            username.setCustomValidity("");
+            prov3=true;
+        }
+    };
+
+    const radio_black = document.getElementById("radio-black");
+    radio_black.onclick = function () {
+        body.style.backgroundColor="#282828";
+    }
+
+    const radio_white = document.getElementById("radio-white");
+    radio_white.onclick = function () {
+        body.style.backgroundColor="white";
+    }
+
+</script>
 </body>
 </html>
