@@ -14,7 +14,7 @@ form {
     gap: 16px;
 }
 body {
-    background-color: lightsteelblue;
+    background-color: white;
 }
 .form-input {
     height: 40px;
@@ -23,23 +23,27 @@ body {
     align-items: center;
     justify-content: center;
 }
-input[type=submit] {
+button[type=submit] {
     width: 100px;
     height: 40px;
-    background-color: greenyellow;
-}
-input[type=submit]:hover {
-    cursor: pointer;
-    width: 100px;
-    height: 40px;
-    background-color: lawngreen;
-}
-input[type=submit]:active {
-    background-color: green;
 }
 .submit-input {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: red;
+}
+.form-radio {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+input[id=radio-black] {
+    width: 20px;
+    height: 20px;
+}
+input[id=radio-white] {
+    width: 20px;
+    height: 20px;
 }
