@@ -1,0 +1,19 @@
+import styles from './AsteroidAction.module.css';
+
+type AsteroidActionProps = {
+  isDangerous: boolean;
+};
+
+export const AsteroidAction = (props: AsteroidActionProps) => {
+  const { isDangerous } = props;
+  return (
+    <div>
+      <div className={styles.actionGrade}>
+        {`Оценка:      ${isDangerous ? `опасен` : `не опасен`}`}
+      </div>
+      <button className={styles.action}>
+        <div className={styles.actionText}>На уничтожение</div>
+      </button>
+    </div>
+  );
+};
