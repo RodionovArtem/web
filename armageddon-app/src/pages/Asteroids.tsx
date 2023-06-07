@@ -2,17 +2,16 @@ import { AsteroidCard } from '../components/card/Card'
 import styles from './Asteroids.module.css'
 import { Header } from '../components/header/Header'
 import { Link } from 'react-router-dom'
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect} from 'react';
 import { AsteroidsContext } from '../components/asteroids-context/AsteroidsContext';
+import { getUserKey } from '../utils/getUserKey';
 
 export const Asteroids = () => {
 
     useEffect(() => {
-        try {
+        try { //api_key = IBHHw7GM4HWxZRxUQpSQZIylGjEwuUbIWy6IeXwX
             const result = fetch(
-                'https://api.nasa.gov/neo/rest/v1/feed?api_key=IBHHw7GM4HWxZRxUQpSQZIylGjEwuUbIWy6IeXwX'
-            )
-                .then((res) => {
+                `https://api.nasa.gov/neo/rest/v1/feed?api_key=${getUserKey()}`).then((res) => {
                     return res.json()
                 })
                 .then((response) => {
