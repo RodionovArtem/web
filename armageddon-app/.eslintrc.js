@@ -25,6 +25,6 @@ module.exports = {
         "@typescript-eslint"
     ],
     "rules": {
-        "import/no-unresolved": "off"
+        "import/no-unresolved": "warn"
     }
 }
