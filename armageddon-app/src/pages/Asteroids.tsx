@@ -2,13 +2,10 @@ import { AsteroidCard } from '../components/card/Card'
 import styles from './Asteroids.module.css'
 import { Header } from '../components/header/Header'
 import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react';
+import { AsteroidsContext } from '../components/asteroids-context/AsteroidsContext';
 
 export const Asteroids = () => {
-    const [asteroids, setAsteroids] = useState([])
-
-    const [onlyDangerous, setonlyDangerous] = useState(false)
-    const [onlyhdistanceMode, setonlyhdistanceMode] = useState(true)
 
     useEffect(() => {
         try {
@@ -54,6 +51,8 @@ export const Asteroids = () => {
         }
     }, [])
 
+    const {asteroids, setAsteroids, onlyDangerous, setonlyDangerous, setDistanceMode} = useContext(AsteroidsContext);
+
     return (
         <div>
             <div>
@@ -74,35 +73,26 @@ export const Asteroids = () => {
                         Расстояние
                         <Link
                             to={'/asteroids'}
-                            onClick={() => setonlyhdistanceMode(true)}
+                            onClick={() => setDistanceMode(true)}
                         >
                             в километрах
                         </Link>
                         <Link
                             to={'/asteroids'}
-                            onClick={() => setonlyhdistanceMode(false)}
+                            onClick={() => setDistanceMode(false)}
                         >
                             в дистанциях до луны
                         </Link>
                     </div>
                 </div>
                 {onlyDangerous
-                    ? asteroids
-                          .filter((item) => item.isDangerous)
-                          .map((item) => (
-                              <AsteroidCard
-                                  key={item.id}
-                                  {...item}
-                                  distanceMode={onlyhdistanceMode}
-                              />
-                          ))
-                    : asteroids.map((item) => (
-                          <AsteroidCard
-                              key={item.id}
-                              {...item}
-                              distanceMode={onlyhdistanceMode}
-                          />
-                      ))}
+                  ? asteroids.filter((it) => it.isDangerous).map((item) =>
+                    <AsteroidCard key={item.id}{...item} />) : asteroids.map((item) =>
+                    <AsteroidCard
+                      key={item.id}
+                      {...item}
+                    />
+                  )}
             </div>
         </div>
     )
