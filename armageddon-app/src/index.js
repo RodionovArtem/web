@@ -1,13 +1,13 @@
 import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createHashRouter, RouterProvider } from 'react-router-dom';
 import { Asteroids } from './pages/Asteroids';
 import { Destroyment } from './pages/Destroyment';
 import { Asteroid } from './pages/Asteroid';
 import { AsteroidsContextProvider } from './components/asteroids-context/AsteroidsContext';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '/asteroids',
     element: <Asteroids />,
@@ -26,7 +26,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <AsteroidsContextProvider>
-      <RouterProvider router={router} />
+      <RouterProvider router={router}/>
     </AsteroidsContextProvider>
   </React.StrictMode>
 );

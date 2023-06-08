@@ -9,7 +9,7 @@ import { getUserKey } from '../utils/getUserKey';
 export const Asteroids = () => {
 
     useEffect(() => {
-        try { //api_key = IBHHw7GM4HWxZRxUQpSQZIylGjEwuUbIWy6IeXwX
+        try {
             const result = fetch(
                 `https://api.nasa.gov/neo/rest/v1/feed?api_key=${getUserKey()}`).then((res) => {
                     return res.json()
