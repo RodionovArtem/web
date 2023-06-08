@@ -9,11 +9,11 @@ import { AsteroidsContextProvider } from './components/asteroids-context/Asteroi
 
 const router = createHashRouter([
   {
-    path: '/asteroids',
+    path: '/',
     element: <Asteroids />,
   },
   {
-    path: '/destroyment',
+    path: '/',
     element: <Destroyment />,
   },
   {

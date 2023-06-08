@@ -71,13 +71,13 @@ export const Asteroids = () => {
                     <div className={styles.distances}>
                         Расстояние
                         <Link
-                            to={'/asteroids'}
+                            to={'/'}
                             onClick={() => setDistanceMode(true)}
                         >
                             в километрах
                         </Link>
                         <Link
-                            to={'/asteroids'}
+                            to={'/'}
                             onClick={() => setDistanceMode(false)}
                         >
                             в дистанциях до луны
