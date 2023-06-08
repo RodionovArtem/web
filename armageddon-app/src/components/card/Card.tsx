@@ -1,5 +1,4 @@
 import styles from './Card.module.css';
-import { AsteroidContent } from './AsteroidContent/AsteroidContent';
 import { AsteroidAction } from './AsteroidAction/AsteroidAction';
 import { AsteroidImage } from './AsteroidImage/AsteroidImage';
 import { AsteroidContentContainer } from './AsteroidContent/AsteroidContentContainer';
